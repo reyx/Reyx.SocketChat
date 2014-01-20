@@ -149,8 +149,11 @@ $RECYCLE.BIN/
 
 # Mac crap
 .DS_Store
+<<<<<<< HEAD
 
 # Grunt generated
 *.min.css
 *.min.js
 node_modules/
+=======
+>>>>>>> e701cc9e0cc7db0690c3b37f70fb91ee77b1cc0f
