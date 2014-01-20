@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h1>Chat</h1>
+            <form role="form" data-ng-submit="login()" class="add-bottom">
+                <input type="text" name="name" data-ng-model="user.Name" class="form-control" />
+            </form>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li data-ng-class="{ active: user.active }" data-ng-repeat="user in users">
+                            <a data-ng-click="activateChat(user)">
+                                <span data-ng-bind="user.Unread" data-ng-show="user.Unread > 0" class="badge pull-right"></span>
+                                <span data-ng-bind="user.Name"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-9">
+                    <div data-ng-repeat="chat in chats" data-ng-show="chat.active">
+                        <div class="panel panel-default" style="height: 300px; overflow: auto;">
+                            <div class="panel-body">
+                                <ul class="list-unstyled" style="margin-bottom: 0;">
+                                    <li data-ng-repeat="message in chat.Messages">
+                                        <div class="row add-half-bottom">
+                                            <div class="col-md-12">
+                                                <a href="#" data-ng-class="{ me: message.ToUser.Slug == user.Slug }">{{ message.FromUser.Name }}</a> ({{ message.Date|date:'hh:mm a' }}):
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div data-ng-bind-html="message.Message"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <form role="form" data-ng-submit="sendMessage(chat.ToUser)">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <input type="text" data-ng-model="message.Message" class="form-control" />
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="submit" value="Enviar" class="btn btn-primary btn-block" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

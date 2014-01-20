@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XSockets.Protocol</name>
+    </assembly>
+    <members>
+        <member name="T:XSockets.Protocol.Hybi00Protocol">
+            <summary>
+            Hybi00 implementation http://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol-00
+            </summary>
+        </member>
+        <member name="T:XSockets.Protocol.XSocketProtocol">
+            <summary>
+            Base for all protocol versions
+            </summary>
+        </member>
+        <member name="T:XSockets.Protocol.Rfc6455Protocol">
+            <summary>
+            RFC6455 implementation http://tools.ietf.org/html/rfc6455
+            </summary>
+        </member>
+    </members>
+</doc>
